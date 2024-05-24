@@ -3,6 +3,7 @@
 ```
 npm install -g wrangler
 wrangler deploy
+wrangler secret put email
 ```
 
 # requirements
@@ -14,9 +15,9 @@ TXT @ v=spf1 include:_spf.mx.cloudflare.net include:relay.mailchannels.net ~all
 TXT _mailchannels v=mc1 cfid=subdomain.workers.dev
 ```
 
-enviornment variable `email` which is approved for cloudflare email routing
+# test
 
 ```
-wrangler dev --var "email:user@domain.com"
-wrangler secret put email
+wrangler dev -r --var "email:user@domain.com"
+open test.html
 ```
